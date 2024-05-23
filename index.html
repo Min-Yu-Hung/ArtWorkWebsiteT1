@@ -20,22 +20,28 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            column-count: 3;
+            column-gap: 1em;
         }
         .project {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 20px;
+            display: inline-block;
+            background-color: #111;
+            margin: 0 0 1em;
+            width: 100%;
+            break-inside: avoid;
         }
         .project img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
         .project-title {
             font-size: 24px;
-            margin: 10px 0;
+            margin: 10px;
         }
         .project-description {
             font-size: 16px;
+            margin: 10px;
         }
         .social-media {
             text-align: center;
@@ -63,23 +69,22 @@
         <div class="project">
             <div class="project-title">麻雀</div>
             <div class="project-description">#touchdesigner #opengl</div>
-	    <img src="麻雀.png" alt="麻雀">
-
+            <img src="麻雀.png" alt="麻雀">
         </div>
         <div class="project">
             <div class="project-title">人機宣言</div>
             <div class="project-description">第一次做的動畫</div>
-	    <img src="人機宣言.png" alt="人機宣言">
+            <img src="人機宣言.png" alt="人機宣言">
         </div>
         <div class="project">
             <div class="project-title">彩色椅子</div>
             <div class="project-description">之前在TouchDesigner寫的材質移植到Blender中</div>
-	    <img src="彩色椅子.png" alt="彩色椅子">
+            <img src="彩色椅子.png" alt="彩色椅子">
         </div>
         <div class="project">
             <div class="project-title">kanabi</div>
             <div class="project-description">:D</div>
-	    <img src="Kanabi.png" alt="Kanabi">
+            <img src="Kanabi.png" alt="Kanabi">
         </div>
     </div>
     <div class="social-media">
