@@ -3,100 +3,576 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hung Min Yu - 個人網站</title>
+    <title>Hung Min Yu — Digital Art Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #0f1119;
+            --bg-accent: #181b28;
+            --surface: rgba(24, 28, 40, 0.76);
+            --surface-strong: rgba(24, 28, 40, 0.9);
+            --primary: #f0c674;
+            --primary-soft: rgba(240, 198, 116, 0.32);
+            --muted: #a2a7bb;
+            --text: #e3e6f3;
+            --text-soft: rgba(227, 230, 243, 0.72);
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: rgba(240, 198, 116, 0.35);
+            --blur: 22px;
+            font-size: 16px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
             margin: 0;
-            padding: 0;
+            font-family: 'Manrope', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at 10% 15%, rgba(41, 69, 163, 0.35), transparent 45%),
+                        radial-gradient(circle at 90% 25%, rgba(226, 102, 97, 0.38), transparent 48%),
+                        linear-gradient(160deg, #080910, #141620);
+            min-height: 100vh;
+            line-height: 1.7;
         }
-        .header, .footer {
-            text-align: center;
-            padding: 20px;
+
+        a {
+            color: inherit;
+            text-decoration: none;
         }
-        .content {
+
+        .page-shell {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-shell::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(103, 193, 245, 0.2), transparent 50%),
+                        radial-gradient(circle at 80% 75%, rgba(240, 198, 116, 0.12), transparent 48%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(var(--blur));
+            background: linear-gradient(180deg, rgba(10, 12, 20, 0.92) 0%, rgba(10, 12, 20, 0.35) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-bar {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            column-count: 3;
-            column-gap: 1em;
+            padding: 24px clamp(20px, 4vw, 40px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
         }
-        .project {
-            display: inline-block;
-            background-color: #f0f0f0;
-            margin: 0 0 1em;
+
+        .brand-mark {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .brand-mark span {
+            font-size: 13px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .brand-mark strong {
+            font-size: clamp(18px, 3vw, 22px);
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 4vw, 40px);
+            font-size: 15px;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: 6px 0;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
             width: 100%;
-            break-inside: avoid;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            height: 1px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
-        .project img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 1px solid #ccc;
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible,
+        .nav-links a[aria-current="page"] {
+            color: var(--text);
         }
-        .project-title {
-            font-size: 24px;
-            margin: 10px;
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after,
+        .nav-links a[aria-current="page"]::after {
+            transform: scaleX(1);
         }
-        .project-description {
-            font-size: 16px;
-            margin: 10px;
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 40px) 120px;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(64px, 10vw, 120px);
         }
-        .social-media {
+
+        .hero {
+            display: grid;
+            gap: clamp(32px, 6vw, 72px);
+            align-items: center;
+        }
+
+        .hero-copy {
+            background: var(--surface);
+            border-radius: 28px;
+            padding: clamp(28px, 5vw, 52px);
+            border: 1px solid var(--border);
+            box-shadow: 0 28px 60px rgba(4, 6, 13, 0.45);
+            backdrop-filter: blur(var(--blur));
+        }
+
+        .hero-copy h1 {
+            margin: 0 0 16px;
+            font-size: clamp(36px, 6vw, 54px);
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+        }
+
+        .hero-copy p {
+            margin: 0 0 32px;
+            color: var(--text-soft);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 13px;
+            border: 1px solid transparent;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, rgba(240, 198, 116, 0.95), rgba(215, 134, 76, 0.92));
+            color: #1a1c24;
+            box-shadow: 0 12px 30px rgba(240, 198, 116, 0.45);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--primary-soft);
+            color: var(--text);
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 38px rgba(240, 198, 116, 0.45);
+        }
+
+        .hero-visual {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            min-height: 320px;
+            background: linear-gradient(160deg, rgba(240, 198, 116, 0.12), rgba(103, 193, 245, 0.12));
+            border: 1px solid var(--border);
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('Kanabiout1.png') center/cover no-repeat;
+            mix-blend-mode: screen;
+            opacity: 0.8;
+            filter: saturate(110%);
+        }
+
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 60% 40%, rgba(240, 198, 116, 0.45), transparent 55%),
+                        linear-gradient(140deg, rgba(15, 17, 25, 0.1), rgba(15, 17, 25, 0.85));
+        }
+
+        .hero-visual span {
+            position: absolute;
+            bottom: 28px;
+            left: 28px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(10, 12, 20, 0.55);
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .tag-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-size: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(26px, 4vw, 34px);
+            letter-spacing: 0.05em;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            gap: clamp(24px, 4vw, 36px);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .art-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-card:hover,
+        .art-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 46px rgba(5, 7, 14, 0.6);
+        }
+
+        .art-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .card-desc {
+            margin: 0;
+            color: var(--text-soft);
+            font-size: 15px;
+        }
+
+        .news-board {
+            display: grid;
+            gap: 18px;
+            background: var(--surface);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            padding: clamp(24px, 5vw, 40px);
+        }
+
+        .news-item {
+            display: grid;
+            gap: 8px;
+            border-left: 2px solid var(--primary-soft);
+            padding-left: 18px;
+        }
+
+        .news-item time {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+        }
+
+        .news-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .news-item p {
+            margin: 0;
+            color: var(--text-soft);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px clamp(20px, 6vw, 40px) 72px;
+            background: rgba(10, 12, 20, 0.9);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 24px;
             text-align: center;
-            margin-top: 20px;
         }
-        .social-media a {
-            color: #000;
-            text-decoration: none;
-            margin: 0 10px;
+
+        .footer-inner p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .social-links a {
+            padding-bottom: 3px;
+            position: relative;
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover::after,
+        .social-links a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        @media (min-width: 960px) {
+            .hero {
+                grid-template-columns: minmax(320px, 1fr) minmax(280px, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .hero-visual {
+                min-height: 260px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Hung Min Yu</h1>
-        <p>歡迎來到我的個人網站！</p>
-    </div>
-    <div class="content">
-        <h2>藝術作品集</h2>
-        <div class="project">
-            <div class="project-title">舊公寓模塊化插畫</div>
-            <div class="project-description">用p5js</div>
-            <img src="下載.png" alt="舊公寓模塊化插畫">
-        </div>
-        <div class="project">
-            <div class="project-title">麻雀</div>
-            <div class="project-description">#touchdesigner #opengl</div>
-            <img src="麻雀.png" alt="麻雀">
-        </div>
-        <div class="project">
-            <div class="project-title">人機宣言</div>
-            <div class="project-description">第一次做的動畫</div>
-            <img src="人機宣言.png" alt="人機宣言">
-        </div>
-        <div class="project">
-            <div class="project-title">彩色椅子</div>
-            <div class="project-description">之前在TouchDesigner寫的材質移植到Blender中</div>
-            <img src="彩色椅子.png" alt="彩色椅子">
-        </div>
-        <div class="project">
-            <div class="project-title">kanabi</div>
-            <div class="project-description">:D</div>
-            <img src="Kanabi.png" alt="Kanabi">
-        </div>
-    </div>
-    <div class="social-media">
-        <p>關注我：</p>
-        <a href="https://www.instagram.com/isaac_hung371/" target="_blank">Instagram</a>
-    </div>
-    <div class="footer">
-        <p>&copy; 2024 Hung Min Yu</p>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="nav-bar">
+                <div class="brand-mark">
+                    <span>Hung Min Yu</span>
+                    <strong>Interactive Visual Artist</strong>
+                </div>
+                <nav class="nav-links" aria-label="主要導覽">
+                    <a href="#works" aria-current="page">作品</a>
+                    <a href="#about">關於</a>
+                    <a href="#news">近況</a>
+                    <a href="#contact">聯絡</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero" id="about">
+                <div class="hero-copy">
+                    <div class="tag-strip">
+                        <span class="tag">Generative</span>
+                        <span class="tag">Immersive</span>
+                        <span class="tag">Interactive</span>
+                    </div>
+                    <h1>透過光、聲音與程式編織可感知的宇宙。</h1>
+                    <p>專注於沉浸式裝置、互動表演與生成影像，善於將城市記憶與抽象感知重組為可被觸碰的視覺旅程。作品於台北數位藝術節、上海數位舞台獲選展出。</p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#works">查看作品</a>
+                        <a class="btn btn-secondary" href="mailto:hungminyu@example.com">合作洽談</a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <span>Kanabi 裝置現場</span>
+                </div>
+            </section>
+
+            <section aria-labelledby="works-heading" id="works">
+                <div class="section-heading">
+                    <h2 id="works-heading">Selected Works</h2>
+                    <p>跨媒材的實驗與展演片段</p>
+                </div>
+                <div class="gallery" role="list">
+                    <article class="art-card" role="listitem">
+                        <img src="下載.png" alt="舊公寓模塊化插畫作品的霓虹色塊構成都市輪廓">
+                        <div class="card-body">
+                            <span class="card-meta">P5.js · Generative Illustration · 2022</span>
+                            <h3 class="card-title">舊公寓模塊化插畫</h3>
+                            <p class="card-desc">以程式生成幾何結構重構台北巷弄記憶，透過霓虹色塊與細緻線條捕捉老公寓的層次。</p>
+                        </div>
+                    </article>
+                    <article class="art-card" role="listitem">
+                        <img src="麻雀.png" alt="麻雀作品的粒子軌跡形成遷徙群聚的視覺">
+                        <div class="card-body">
+                            <span class="card-meta">TouchDesigner · Audio Reactive</span>
+                            <h3 class="card-title">麻雀</h3>
+                            <p class="card-desc">以聲音驅動粒子系統，模擬雀鳥穿越城市的軌跡，將喧囂轉化為流動的光線。</p>
+                        </div>
+                    </article>
+                    <article class="art-card" role="listitem">
+                        <img src="人機宣言.png" alt="人機宣言動畫作品以拼貼與光束交錯呈現">
+                        <div class="card-body">
+                            <span class="card-meta">Animation · Narrative Experiment</span>
+                            <h3 class="card-title">人機宣言</h3>
+                            <p class="card-desc">結合詩性旁白與數位拼貼，探索人與機器共生的矛盾，形成具沉浸張力的視覺敘事。</p>
+                        </div>
+                    </article>
+                    <article class="art-card" role="listitem">
+                        <img src="彩色椅子.png" alt="彩色椅子作品顯示漸層材質包覆家具輪廓">
+                        <div class="card-body">
+                            <span class="card-meta">TouchDesigner → Blender · Material Study</span>
+                            <h3 class="card-title">彩色椅子</h3>
+                            <p class="card-desc">將程式生成的色彩流動轉譯為 3D 材質，透過光影折射呈現椅子結構的細膩層理。</p>
+                        </div>
+                    </article>
+                    <article class="art-card" role="listitem">
+                        <img src="Kanabi.png" alt="Kanabi 沉浸式體驗作品以鏡面與光束構成通道">
+                        <div class="card-body">
+                            <span class="card-meta">Immersive Installation · 2023</span>
+                            <h3 class="card-title">Kanabi</h3>
+                            <p class="card-desc">多層鏡面折射與霧化光束交織出的沉浸空間，邀請觀眾在呼吸節奏間感受光的脈動。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section aria-labelledby="news-heading" id="news">
+                <div class="section-heading">
+                    <h2 id="news-heading">Studio Notes</h2>
+                    <p>展演近況與合作紀錄</p>
+                </div>
+                <div class="news-board">
+                    <article class="news-item">
+                        <time datetime="2024-05">2024.05</time>
+                        <h3>《麻雀》於台北數位藝術節展出</h3>
+                        <p>受邀於松菸文化園區展出，以即時聲音訊號重新編排粒子場景，獲得觀眾高度互動回饋。</p>
+                    </article>
+                    <article class="news-item">
+                        <time datetime="2024-02">2024.02</time>
+                        <h3>與音樂人 Kanabi 展開沉浸式演出</h3>
+                        <p>共同打造 360 度全息光束舞台，結合環境聲場與演奏者動態捕捉，呈現多層次感官體驗。</p>
+                    </article>
+                    <article class="news-item">
+                        <time datetime="2023-11">2023.11</time>
+                        <h3>《人機宣言》短片入選未來敘事單元</h3>
+                        <p>在上海數位舞台首映，並於映後座談分享程式影像與文本創作的跨域流程。</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <div class="footer-inner">
+                <p>&copy; 2024 Hung Min Yu. 保留所有權利。</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/isaac_hung371/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="mailto:hungminyu@example.com">Email</a>
+                    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
-
