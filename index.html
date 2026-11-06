@@ -1,567 +1,82 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hung Min Yu — Digital Art Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0f1119;
-            --bg-accent: #181b28;
-            --surface: rgba(24, 28, 40, 0.76);
-            --surface-strong: rgba(24, 28, 40, 0.9);
-            --primary: #f0c674;
-            --primary-soft: rgba(240, 198, 116, 0.32);
-            --muted: #a2a7bb;
-            --text: #e3e6f3;
-            --text-soft: rgba(227, 230, 243, 0.72);
-            --border: rgba(255, 255, 255, 0.08);
-            --glow: rgba(240, 198, 116, 0.35);
-            --blur: 22px;
-            font-size: 16px;
-        }
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>洪敏祐 作品集</title><style>
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box}
+:root{--ink:#1d2329;--ink2:#4a5560;--mute:#8a949e;--line:#e3e7eb;--ac:#1f7a6b}
+html,body{margin:0;padding:0;background:#d9dde1}
+body{font-family:"Microsoft JhengHei","Noto Sans TC","Segoe UI",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:1920px;height:1080px;background:#fff;position:relative;overflow:hidden;margin:0 auto 24px;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0}}
+.abs{position:absolute}
+.tb{position:absolute;left:96px;right:96px;top:44px;display:flex;justify-content:space-between;font-size:13px;font-weight:800;letter-spacing:.2em;padding-bottom:10px;border-bottom:1px solid #d5d9dd}
+.tb em{font-style:normal;font-weight:500;color:var(--mute);margin-left:14px;letter-spacing:.12em}
+.lbl{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--mute)}
+h1{font-size:34px;margin:0;font-weight:800;line-height:1.2}
+h1 small{font-size:20px;font-weight:500;color:var(--ink2);margin-left:16px}
+.lead{font-size:18px;line-height:1.7;color:var(--ink2);margin:0}
+.lead b{color:var(--ink)}
+.txt p{font-size:15.5px;line-height:1.7;color:var(--ink2);margin:0 0 12px}
+.txt p b{color:var(--ink)}
+.txt h3{font-size:19px;margin:0 0 8px;padding-top:12px;border-top:2px solid var(--ink)}
+.txt .num{font-size:40px;font-weight:300;color:#b9bec4;line-height:1;font-family:"Segoe UI Light","Segoe UI",sans-serif;margin-bottom:6px}
+.meta{font-size:14px;color:var(--mute);line-height:1.7}
+.tags span{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ink2);border:1px solid #cfd5da;border-radius:4px;padding:1px 7px;margin:0 6px 6px 0}
+img{display:block}
+.cap{position:absolute;font-size:13.5px;color:var(--ink2);line-height:1.45}
+.cap b{color:var(--ink)}
+.cap .t{font-family:Consolas,monospace;font-weight:700;color:var(--ac);margin-right:8px}
+.note{font-size:13.5px;color:var(--ink2);line-height:1.6;border-left:3px solid var(--ac);padding:2px 0 2px 12px}
+.full img{width:1920px;height:1080px}
+a.lk{color:#2f6f8f;text-decoration:none;border-bottom:1px solid #9fbccb}
+.dv{background:#fff}
+.dv .ctr{position:absolute;left:96px;right:96px;top:250px;text-align:center}
+.dv .pn{font-size:14px;font-weight:700;letter-spacing:.5em;color:var(--mute);margin-left:.5em}
+.dv .nm{margin-top:34px;font-size:62px;font-weight:800;line-height:1.2;color:var(--ink);letter-spacing:.24em;margin-left:.24em}
+.dv .ds{margin-top:20px;font-size:20px;line-height:1.6;color:var(--ink2);letter-spacing:.16em;margin-left:.16em}
+.dv .rule{width:48px;margin:44px auto 36px;border-top:2px solid var(--ink)}
+.dv .inf{font-size:16px;line-height:1.85;color:var(--ink2);letter-spacing:.06em}
+.dv .inf p{margin:0 0 14px}
+.dv .inf .k{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.4em;color:var(--mute);margin-right:14px}
+.dv .badge{display:inline-block;font-size:14.5px;font-weight:800;color:var(--ink);border:1.5px solid var(--ink);padding:0 10px;letter-spacing:.2em;line-height:1.6}
+.dv .ix{position:absolute;left:96px;right:96px;top:948px;display:grid;grid-template-columns:repeat(7,1fr);column-gap:16px}
+.dv .ix div{border-top:1px solid #cfd5da;padding-top:10px;font-size:14px;line-height:1.4;color:var(--mute)}
+.dv .ix div span{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;margin-bottom:2px}
+.dv .ix div.on{border-top:3px solid var(--ink);padding-top:8px;color:var(--ink);font-weight:800}
 
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Manrope', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text);
-            background: radial-gradient(circle at 10% 15%, rgba(41, 69, 163, 0.35), transparent 45%),
-                        radial-gradient(circle at 90% 25%, rgba(226, 102, 97, 0.38), transparent 48%),
-                        linear-gradient(160deg, #080910, #141620);
-            min-height: 100vh;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .page-shell {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-shell::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(103, 193, 245, 0.2), transparent 50%),
-                        radial-gradient(circle at 80% 75%, rgba(240, 198, 116, 0.12), transparent 48%);
-            pointer-events: none;
-            mix-blend-mode: screen;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            backdrop-filter: blur(var(--blur));
-            background: linear-gradient(180deg, rgba(10, 12, 20, 0.92) 0%, rgba(10, 12, 20, 0.35) 100%);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-bar {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px clamp(20px, 4vw, 40px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .brand-mark {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .brand-mark span {
-            font-size: 13px;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .brand-mark strong {
-            font-size: clamp(18px, 3vw, 22px);
-            letter-spacing: 0.08em;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: clamp(16px, 4vw, 40px);
-            font-size: 15px;
-        }
-
-        .nav-links a {
-            position: relative;
-            padding: 6px 0;
-            color: var(--muted);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: color 0.25s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus-visible,
-        .nav-links a[aria-current="page"] {
-            color: var(--text);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a:focus-visible::after,
-        .nav-links a[aria-current="page"]::after {
-            transform: scaleX(1);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: clamp(60px, 8vw, 100px) clamp(20px, 6vw, 40px) 120px;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(64px, 10vw, 120px);
-        }
-
-        .hero {
-            display: grid;
-            gap: clamp(32px, 6vw, 72px);
-            align-items: center;
-        }
-
-        .hero-copy {
-            background: var(--surface);
-            border-radius: 28px;
-            padding: clamp(28px, 5vw, 52px);
-            border: 1px solid var(--border);
-            box-shadow: 0 28px 60px rgba(4, 6, 13, 0.45);
-            backdrop-filter: blur(var(--blur));
-        }
-
-        .hero-copy h1 {
-            margin: 0 0 16px;
-            font-size: clamp(36px, 6vw, 54px);
-            letter-spacing: 0.02em;
-            line-height: 1.15;
-        }
-
-        .hero-copy p {
-            margin: 0 0 32px;
-            color: var(--text-soft);
-        }
-
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 22px;
-            border-radius: 999px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-size: 13px;
-            border: 1px solid transparent;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, rgba(240, 198, 116, 0.95), rgba(215, 134, 76, 0.92));
-            color: #1a1c24;
-            box-shadow: 0 12px 30px rgba(240, 198, 116, 0.45);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border-color: var(--primary-soft);
-            color: var(--text);
-        }
-
-        .btn:hover,
-        .btn:focus-visible {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 38px rgba(240, 198, 116, 0.45);
-        }
-
-        .hero-visual {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            min-height: 320px;
-            background: linear-gradient(160deg, rgba(240, 198, 116, 0.12), rgba(103, 193, 245, 0.12));
-            border: 1px solid var(--border);
-        }
-
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('Kanabiout1.png') center/cover no-repeat;
-            mix-blend-mode: screen;
-            opacity: 0.8;
-            filter: saturate(110%);
-        }
-
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 60% 40%, rgba(240, 198, 116, 0.45), transparent 55%),
-                        linear-gradient(140deg, rgba(15, 17, 25, 0.1), rgba(15, 17, 25, 0.85));
-        }
-
-        .hero-visual span {
-            position: absolute;
-            bottom: 28px;
-            left: 28px;
-            padding: 10px 18px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(10, 12, 20, 0.55);
-            font-size: 13px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-
-        .tag-strip {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .tag {
-            padding: 6px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--muted);
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            font-size: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .section-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .section-heading h2 {
-            margin: 0;
-            font-size: clamp(26px, 4vw, 34px);
-            letter-spacing: 0.05em;
-        }
-
-        .section-heading p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        .gallery {
-            display: grid;
-            gap: clamp(24px, 4vw, 36px);
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        }
-
-        .art-card {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            background: var(--surface-strong);
-            border: 1px solid var(--border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .art-card:hover,
-        .art-card:focus-within {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 46px rgba(5, 7, 14, 0.6);
-        }
-
-        .art-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .card-meta {
-            font-size: 12px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .card-title {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .card-desc {
-            margin: 0;
-            color: var(--text-soft);
-            font-size: 15px;
-        }
-
-        .news-board {
-            display: grid;
-            gap: 18px;
-            background: var(--surface);
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            padding: clamp(24px, 5vw, 40px);
-        }
-
-        .news-item {
-            display: grid;
-            gap: 8px;
-            border-left: 2px solid var(--primary-soft);
-            padding-left: 18px;
-        }
-
-        .news-item time {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-        }
-
-        .news-item h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .news-item p {
-            margin: 0;
-            color: var(--text-soft);
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px clamp(20px, 6vw, 40px) 72px;
-            background: rgba(10, 12, 20, 0.9);
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 24px;
-            text-align: center;
-        }
-
-        .footer-inner p {
-            margin: 0;
-            color: var(--muted);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-        }
-
-        .social-links a {
-            padding-bottom: 3px;
-            position: relative;
-        }
-
-        .social-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover::after,
-        .social-links a:focus-visible::after {
-            transform: scaleX(1);
-        }
-
-        @media (min-width: 960px) {
-            .hero {
-                grid-template-columns: minmax(320px, 1fr) minmax(280px, 1fr);
-            }
-        }
-
-        @media (max-width: 720px) {
-            .nav-bar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-            }
-
-            .hero-visual {
-                min-height: 260px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                transition-duration: 0.01ms !important;
-                animation-duration: 0.01ms !important;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="nav-bar">
-                <div class="brand-mark">
-                    <span>Hung Min Yu</span>
-                    <strong>Interactive Visual Artist</strong>
-                </div>
-                <nav class="nav-links" aria-label="主要導覽">
-                    <a href="#works" aria-current="page">作品</a>
-                    <a href="#about">關於</a>
-                    <a href="#news">近況</a>
-                    <a href="#contact">聯絡</a>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section class="hero" id="about">
-                <div class="hero-copy">
-                    <div class="tag-strip">
-                        <span class="tag">Generative</span>
-                        <span class="tag">Immersive</span>
-                        <span class="tag">Interactive</span>
-                    </div>
-                    <h1>透過光、聲音與程式編織可感知的宇宙。</h1>
-                    <p>。</p>
-                    <div class="cta-row">
-                        <a class="btn btn-primary" href="#works">查看作品</a>
-                        <a class="btn btn-secondary" href="mailto:hungminyu@example.com">合作洽談</a>
-                    </div>
-                </div>
-                <div class="hero-visual" aria-hidden="true">
-                    <span>Kanabi 裝置現場</span>
-                </div>
-            </section>
-
-            <section aria-labelledby="works-heading" id="works">
-                <div class="section-heading">
-                    <h2 id="works-heading">Selected Works</h2>
-                    <p>跨媒材的實驗與展演片段</p>
-                </div>
-                <div class="gallery" role="list">
-                    <article class="art-card" role="listitem">
-                        <img src="下載.png" alt="舊公寓模塊化插畫作品的霓虹色塊構成都市輪廓">
-                        <div class="card-body">
-                            <span class="card-meta">P5.js · Generative Illustration · 2022</span>
-                            <h3 class="card-title">舊公寓模塊化插畫</h3>
-                            <p class="card-desc">。</p>
-                        </div>
-                    </article>
-                    <article class="art-card" role="listitem">
-                        <img src="麻雀.png" alt="麻雀作品的粒子軌跡形成遷徙群聚的視覺">
-                        <div class="card-body">
-                            <span class="card-meta">TouchDesigner · Audio Reactive</span>
-                            <h3 class="card-title">麻雀</h3>
-                            <p class="card-desc">。</p>
-                        </div>
-                    </article>
-                    <article class="art-card" role="listitem">
-                        <img src="人機宣言.png" alt="人機宣言動畫作品以拼貼與光束交錯呈現">
-                        <div class="card-body">
-                            <span class="card-meta">Animation · Narrative Experiment</span>
-                            <h3 class="card-title">人機宣言</h3>
-                            <p class="card-desc">。</p>
-                        </div>
-                    </article>
-                    <article class="art-card" role="listitem">
-                        <img src="彩色椅子.png" alt="彩色椅子作品顯示漸層材質包覆家具輪廓">
-                        <div class="card-body">
-                            <span class="card-meta">TouchDesigner → Blender · Material Study</span>
-                            <h3 class="card-title">彩色椅子</h3>
-                            <p class="card-desc">。</p>
-                        </div>
-                    </article>
-                    <article class="art-card" role="listitem">
-                        <img src="Kanabi.png" alt="Kanabi 沉浸式體驗作品以鏡面與光束構成通道">
-                        <div class="card-body">
-                            <span class="card-meta">Immersive Installation · 2023</span>
-                            <h3 class="card-title">Kanabi</h3>
-                            <p class="card-desc">。</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section aria-labelledby="news-heading" id="news">
-                <div class="section-heading">
-                    <h2 id="news-heading">Studio Notes</h2>
-                    <p>展演近況與合作紀錄</p>
-                </div>
-                <div class="news-board">
-                    <article class="news-item">
-                        <time datetime="2024-05">2024.05</time>
-
-                    </article>
-                </div>
-            </section>
-        </main>
-        <footer id="contact">
-            <div class="footer-inner">
-                <p>&copy; 2024 Hung Min Yu. 保留所有權利。</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/isaac_hung371/" target="_blank" rel="noopener">Instagram</a>
-                    <a href="mailto:hungminyu@example.com">Email</a>
-                    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-                </div>
-            </div>
-        </footer>
-    </div>
-</body>
-</html>
+@media screen{html,body{background:#eceef0}.dl{position:fixed;right:16px;bottom:16px;z-index:9;font:700 13px/1 "Microsoft JhengHei","Noto Sans TC",sans-serif;letter-spacing:.1em;color:#1d2329;background:#fff;border:1px solid #c9cfd4;border-radius:4px;padding:10px 14px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.08)}#pf{padding-top:24px}}
+@media print{.dl{display:none}}
+</style></head><body><a class="dl" href="portfolio.pdf" download>下載 PDF</a><div id="pf">
+<section class="page"><div class="abs lbl" style="left:0;width:1920px;top:100px;text-align:center;letter-spacing:.5em">PORTFOLIO 2026</div><div class="abs" style="left:0;width:1920px;top:128px;text-align:center;font-size:54px;font-weight:800;letter-spacing:.32em;text-indent:.32em">洪敏祐作品集</div><img loading="lazy" decoding="async" class="abs" src="img/cover_wire.jpg" style="left:258px;top:236px;width:1404px;height:790px"></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:150px">ABOUT</div><div class="abs" style="left:96px;top:176px;font-size:56px;font-weight:800;line-height:1.1;letter-spacing:.06em">洪敏祐</div><div class="abs meta" style="left:96px;top:252px;font-size:16px;letter-spacing:.08em">Min-Yu Hung</div><div class="abs lead" style="left:96px;top:296px;width:700px">3D 場景與技術美術・程序化工具・LLM 互動角色</div><div class="abs txt" style="left:96px;top:346px;width:700px"><p>用 Blender 做場景、貼圖與打光，也把重複的建模工作做成 Geometry Nodes 工具、把動畫交給資料驅動；碩士論文用 LLM 與 Unreal Engine 做一個會依情境叫回習慣的互動角色。</p></div><div class="abs lbl" style="left:96px;top:450px">學歷</div><div class="abs" style="left:96px;top:474px;width:700px"><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">碩士</span><span style="font-size:15.5px;line-height:1.5"><b>國立陽明交通大學 應用藝術研究所</b></span></div><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">學士</span><span style="font-size:15.5px;line-height:1.5"><b>國立陽明交通大學 百川學士學位學程</b><br><span style="color:var(--ink2);font-size:14px">跨領域設計與創新科技</span></span></div><div style="border-top:1px solid var(--line)"></div></div><div class="abs lbl" style="left:96px;top:620px">經歷</div><div class="abs" style="left:96px;top:644px;width:700px"><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">2026</span><span style="font-size:15.5px;line-height:1.5"><b>ISEA 2026 論文發表（第一作者，線上口頭發表）</b><br><span style="color:var(--ink2);font-size:14px"><i>The Digital Pigeon: Eliciting Performative Extremism through Animation-Led Algorithmic Provocation</i></span></span></div><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">2026</span><span style="font-size:15.5px;line-height:1.5"><b>Unreal Engine 工作坊講師</b><br><span style="color:var(--ink2);font-size:14px">教學發展中心・混合實境與人機互動微學程，6 小時</span></span></div><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">2025–26</span><span style="font-size:15.5px;line-height:1.5"><b>教育部教學實踐研究計畫「物理動一動」</b><br><span style="color:var(--ink2);font-size:14px">3D 動畫暨技術美術助教</span></span></div><div style="display:grid;grid-template-columns:90px 1fr;padding:9px 0;border-top:1px solid var(--line)"><span style="font-size:13.5px;color:var(--mute)">2025</span><span style="font-size:15.5px;line-height:1.5"><b>XR 跨域專題 美術助教</b><br><span style="color:var(--ink2);font-size:14px">資工系</span></span></div><div style="border-top:1px solid var(--line)"></div></div><div class="abs" style="left:896px;top:150px;height:860px;border-left:1px solid #cfd5da"></div><div class="abs lbl" style="left:956px;top:150px">CONTENTS</div><div class="abs" style="left:956px;top:182px;width:868px"><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">01</span><span><span style="font-size:22px;font-weight:800">台式理髮廳</span><br><span style="font-size:14px;color:var(--ink2)">Blender 場景建模・手繪貼圖・打光</span></span><span style="font-size:13.5px;color:var(--mute)">2025</span><span style="font-size:14px;font-weight:700;text-align:right">p.03</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">02</span><span><span style="font-size:22px;font-weight:800">Lily AI</span><br><span style="font-size:14px;color:var(--ink2)">碩士論文：LLM 驅動、在 Unreal Engine 演出的互動角色</span></span><span style="font-size:13.5px;color:var(--mute)">2024–</span><span style="font-size:14px;font-weight:700;text-align:right">p.06</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">03</span><span><span style="font-size:22px;font-weight:800">參數化構件工具</span><br><span style="font-size:14px;color:var(--ink2)">Blender Geometry Nodes：拉桿、夾爪、玻璃樓梯</span></span><span style="font-size:13.5px;color:var(--mute)">2025</span><span style="font-size:14px;font-weight:700;text-align:right">p.13</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">04</span><span><span style="font-size:22px;font-weight:800">XR Showcase 活動宣傳主視覺</span><br><span style="font-size:14px;color:var(--ink2)">2025、2026 兩屆活動宣傳主視覺</span></span><span style="font-size:13.5px;color:var(--mute)">2025–26</span><span style="font-size:14px;font-weight:700;text-align:right">p.16</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">05</span><span><span style="font-size:22px;font-weight:800">物理動一動</span><br><span style="font-size:14px;color:var(--ink2)">Python × Blender 資料驅動的物理教學動畫</span></span><span style="font-size:13.5px;color:var(--mute)">2025–26</span><span style="font-size:14px;font-weight:700;text-align:right">p.21</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">06</span><span><span style="font-size:22px;font-weight:800">頒獎典禮舞台背景</span><br><span style="font-size:14px;color:var(--ink2)">Unreal Engine 場景動畫，播放於舞台電視牆</span></span><span style="font-size:13.5px;color:var(--mute)">2025</span><span style="font-size:14px;font-weight:700;text-align:right">p.24</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">07</span><span><span style="font-size:22px;font-weight:800">鴿子音樂盒</span><br><span style="font-size:14px;color:var(--ink2)">LLM × 音樂 × 裸眼 3D 的互動裝置</span></span><span style="font-size:13.5px;color:var(--mute)">2025</span><span style="font-size:14px;font-weight:700;text-align:right">p.26</span></div><div style="display:grid;grid-template-columns:56px 1fr 90px 60px;align-items:baseline;border-top:1px solid #cfd5da;padding:15px 0 13px"><span style="font-size:14px;font-weight:700;color:var(--mute);letter-spacing:.1em">08</span><span><span style="font-size:22px;font-weight:800">其他小型嘗試</span><br><span style="font-size:14px;color:var(--ink2)">布料模擬・Shader・法線烘焙・UE 瀑布・Grasshopper</span></span><span style="font-size:13.5px;color:var(--mute)">2022–26</span><span style="font-size:14px;font-weight:700;text-align:right">p.28</span></div><div style="border-top:1px solid #cfd5da"></div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>個人介紹與目錄<em>02 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 01 / 08</div><div class="nm">台式理髮廳</div><div class="ds">Blender 場景建模・手繪貼圖・打光</div><div class="rule"></div><div class="inf"><p><span class="badge">個人作品</span></p><p>交大遊戲設計社 Blender 場景課期末作業；從找參考、白盒、建模、貼圖到打光<br><b>場景中所有模型都由我親自建模，沒有使用現成模型素材，也沒有 AI 生成</b></p><p><span class="k">工具</span>Blender・Marvelous Designer・手繪貼圖</p><p><span class="k">時間</span>2025</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class="on"><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>01 台式理髮廳<em>03 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">01 — 台式理髮廳</div><h1 class="abs" style="left:96px;top:118px">台式理髮廳<small>Blender 場景建模</small></h1><img loading="lazy" decoding="async" class="abs" src="img/bb_out6.jpg" style="left:96px;top:220px;width:1250px;height:703px"><div class="cap" style="left:96px;top:931px;width:1250px"><b>最終渲染</b>｜偏插畫風的打光：陰影偏藍、對比偏低</div><div class="abs txt" style="left:1394px;top:222px;width:430px"><p class="meta" style="margin-bottom:14px">交大遊戲設計社 Blender 場景課 期末作業<br>從找參考、白盒、比例到完整場景</p><div class="tags" style="margin-bottom:14px"><span>建模</span><span>UV</span><span>手繪貼圖</span><span>材質節點</span><span>打光</span></div><p class="note" style="font-size:15px;margin-bottom:14px"><b>所有模型皆為親自建模</b>：沒有使用現成模型素材，也沒有 AI 生成。</p><p>照真實的傳統理髮廳抓比例與物件，每件道具都有手繪或素材貼圖。</p><p><b>手繪質感</b>：用自己畫的灰階筆觸貼圖，同時控制粗糙度與色相變化。</p><p><b>資產管理</b>：道具各自存成獨立 .blend，用 Link＋Collection Instance 組進場景。</p></div><img loading="lazy" decoding="async" class="abs" src="img/bb_ref.jpg" style="left:1394px;top:720px;width:430px;height:242px"><div class="cap" style="left:1394px;top:970px;width:430px"><b>參考圖</b></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>01 台式理髮廳<em>04 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">01 — 台式理髮廳</div><h1 class="abs" style="left:96px;top:118px">台式理髮廳<small>全部道具與製作過程</small></h1><img loading="lazy" decoding="async" class="abs" src="img/bb_lineup.png" style="left:320px;top:190px;width:1280px;height:544px"><div class="cap" style="left:96px;top:744px;width:600px"><b>全部道具</b>：每一件都親自建模，比例依參考校正；貼圖為手繪或素材</div><img loading="lazy" decoding="async" class="abs" src="img/bb_chair_wire.jpg" style="left:96px;top:804px;width:414px;height:171px"><div class="cap" style="left:96px;top:983px;width:414px"><b>理髮椅布線</b>：卡線做出側邊曲面</div><img loading="lazy" decoding="async" class="abs" src="img/bb_md_wire.jpg" style="left:534px;top:804px;width:414px;height:171px"><div class="cap" style="left:534px;top:983px;width:414px"><b>椅套</b>：Marvelous Designer 模擬布料</div><img loading="lazy" decoding="async" class="abs" src="img/bb_sink_uv.jpg" style="left:972px;top:804px;width:401px;height:171px"><div class="cap" style="left:972px;top:983px;width:401px"><b>UV 對位</b>：一張磁磚貼圖，靠 UV 對齊每一格</div><img loading="lazy" decoding="async" class="abs" src="img/bb_node.jpg" style="left:1397px;top:804px;width:427px;height:171px"><div class="cap" style="left:1397px;top:983px;width:427px"><b>材質節點</b>：手繪筆觸貼圖驅動粗糙度與色相</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>01 台式理髮廳<em>05 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 02 / 08</div><div class="nm">Lily AI</div><div class="ds">碩士論文：LLM 驅動、在 Unreal Engine 演出的互動角色</div><div class="rule"></div><div class="inf"><p><span class="badge">個人作品</span></p><p>論文研究、系統設計與實作</p><p><span class="k">工具</span>Python・開源 LLM（Qwen 27B）・語音辨識／合成・Unreal Engine</p><p><span class="k">時間</span>2024–</p><p><span class="k">影片</span><a class="lk" href="https://youtu.be/TQlKIDfZi5I">Demo 影片　youtu.be/TQlKIDfZi5I</a></p><img loading="lazy" decoding="async" src="img/lily_demo_qr.svg" style="width:76px;height:76px;margin:4px auto 0"></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class="on"><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>06 / 31</em></span></div></section>
+<section class="page"><img loading="lazy" decoding="async" class="abs" src="img/lily_deck1.jpg" style="left:0;top:0;width:1920px;height:1080px"><div class="abs" style="left:0;top:0;width:1920px;height:76px;background:#fff"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>07 / 31</em></span></div></section>
+<section class="page"><img loading="lazy" decoding="async" class="abs" src="img/lily_deck2.jpg" style="left:0;top:0;width:1920px;height:1080px"><div class="abs" style="left:0;top:0;width:1920px;height:76px;background:#fff"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>08 / 31</em></span></div></section>
+<section class="page"><img loading="lazy" decoding="async" class="abs" src="img/lily_deck3.jpg" style="left:0;top:0;width:1920px;height:1080px"><div class="abs" style="left:0;top:0;width:1920px;height:76px;background:#fff"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>09 / 31</em></span></div></section>
+<section class="page"><img loading="lazy" decoding="async" class="abs" src="img/lily_deck4.jpg" style="left:0;top:0;width:1920px;height:1080px"><div class="abs" style="left:0;top:0;width:1920px;height:76px;background:#fff"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>10 / 31</em></span></div></section>
+<section class="page"><img loading="lazy" decoding="async" class="abs" src="img/lily_deck5.jpg" style="left:0;top:0;width:1920px;height:1080px"><div class="abs" style="left:0;top:0;width:1920px;height:76px;background:#fff"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>11 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">02 — Lily AI</div><h1 class="abs" style="left:96px;top:118px">Lily AI<small>遊戲畫面：一通電話裡的交辦</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">字幕上排：使用者的話（語音辨識）；下排黃字：她的回話<br>demo 第 151–174 拍；第 166–171 拍（查書、取書）在剪輯時剪掉</div><img loading="lazy" decoding="async" class="abs" src="img/fr_151.jpg" style="left:96px;top:196px;width:414px;height:233px"><div class="cap" style="left:96px;top:439px;width:414px"><span class="t">第 151 拍</span><b>使用者：「理論，那你去。」</b><br>她拿著話筒，邊聽邊讀書</div><img loading="lazy" decoding="async" class="abs" src="img/fr_153.jpg" style="left:534px;top:196px;width:414px;height:233px"><div class="cap" style="left:534px;top:439px;width:414px"><span class="t">第 153 拍</span><b>使用者交辦：放回這本書、找音樂理論的書</b><br>對話 Agent 答「好的…」，把控制權交給決策 Agent </div><img loading="lazy" decoding="async" class="abs" src="img/fr_156.jpg" style="left:972px;top:196px;width:414px;height:233px"><div class="cap" style="left:972px;top:439px;width:414px"><span class="t">第 156 拍</span><b>使用者補一句：「看看有沒有跟秩序有關的。」</b><br>決策 Agent 握有控制權，這句先記進紀錄</div><img loading="lazy" decoding="async" class="abs" src="img/fr_157.jpg" style="left:1410px;top:196px;width:414px;height:233px"><div class="cap" style="left:1410px;top:439px;width:414px"><span class="t">第 157 拍</span><b>close_book</b><br>決策 Agent：先闔書，才能放回去</div><img loading="lazy" decoding="async" class="abs" src="img/fr_159.jpg" style="left:96px;top:541px;width:414px;height:233px"><div class="cap" style="left:96px;top:784px;width:414px"><span class="t">第 159 拍</span><b>shelve 被世界拒絕</b><br>拿著話筒要兩隻手，原因寫回紀錄</div><img loading="lazy" decoding="async" class="abs" src="img/fr_163.jpg" style="left:534px;top:541px;width:414px;height:233px"><div class="cap" style="left:534px;top:784px;width:414px"><span class="t">第 163 拍</span><b>put_down → shelve</b><br>放下話筒、把書放回 700 書架</div><img loading="lazy" decoding="async" class="abs" src="img/fr_165.jpg" style="left:972px;top:541px;width:414px;height:233px"><div class="cap" style="left:972px;top:784px;width:414px"><span class="t">第 165 拍</span><b>walk_to 查書機</b><br>手空了，轉向查書機去找音樂理論</div><img loading="lazy" decoding="async" class="abs" src="img/fr_174.jpg" style="left:1410px;top:541px;width:414px;height:233px"><div class="cap" style="left:1410px;top:784px;width:414px"><span class="t">第 174 拍</span><b>talk：接回電話</b><br>「好的，我把電話放下來，然後看看這本書裡有沒有跟秩序有關的內容。」</div><div class="abs" style="left:96px;top:856px;width:1728px;border-top:1px solid #cfd5da"></div><div class="abs note" style="left:96px;top:872px;width:1728px">右上角的連線資訊已模糊處理。第 174 拍取自剪輯中的子畫面，解析度較低。</div><div class="abs" style="right:96px;top:868px;display:flex;align-items:center;gap:18px;font-size:15px"><a class="lk" href="https://youtu.be/TQlKIDfZi5I">▶ 完整 Demo 影片　youtu.be/TQlKIDfZi5I</a><img loading="lazy" decoding="async" src="img/lily_demo_qr.svg" style="width:84px;height:84px"></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span><a class="lk" href="https://youtu.be/TQlKIDfZi5I" style="font-weight:600;letter-spacing:.06em;margin-right:28px">▶ Demo 影片 youtu.be/TQlKIDfZi5I</a>02 Lily AI<em>12 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 03 / 08</div><div class="nm">參數化構件工具</div><div class="ds">Blender Geometry Nodes：拉桿、夾爪、玻璃樓梯</div><div class="rule"></div><div class="inf"><p><span class="badge">個人作品</span></p><p>交大遊戲設計社場景課第二學期作業<br>三個 Geometry Nodes 工具以 Claude 透過 Blender MCP 協作開發：我負責拆解需求、定義參數介面、驗收並整合進場景</p><p><span class="k">工具</span>Blender Geometry Nodes・Blender MCP</p><p><span class="k">時間</span>2025</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class="on"><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>03 參數化構件工具<em>13 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">03 — 參數化構件工具</div><h1 class="abs" style="left:96px;top:118px">參數化構件工具<small>Blender Geometry Nodes</small></h1><img loading="lazy" decoding="async" class="abs" src="img/fpj_o2.jpg" style="left:96px;top:190px;width:1420px;height:704px"><div class="cap" style="left:96px;top:902px;width:1420px"><b>場景渲染</b>｜玻璃鋼構建築：拉桿、夾爪、樓梯都由工具生成</div><div class="abs txt" style="left:1560px;top:192px;width:264px"><p class="meta" style="margin-bottom:12px">交大遊戲設計社 Blender 場景課<br>第二學期作業</p><div class="tags" style="margin-bottom:12px"><span>Geometry Nodes</span><span>程序化建模</span><span>工具設計</span></div><p style="margin-bottom:6px"><b>三個工具</b></p><p><b>TieRod_Assembly</b><br>拉桿組件<br><b>Glass_Stair</b><br>沿曲線生成的玻璃樓梯<br><b>Spider_Claw_Array</b><br>玻璃夾爪陣列</p><p class="note">以 Claude 透過 Blender MCP 協作開發：我負責拆解需求、定義參數介面、驗收結果並整合進場景。</p></div><div class="abs txt" style="left:96px;top:937.9923076923077px;width:1420px"><p style="font-size:17px">玻璃鋼構建築裡有上百根拉桿、夾具與一座旋轉樓梯，逐一手動對位不實際。我把這三種構件做成<b>有參數介面的 Geometry Nodes 工具</b>，改端點或數值，模型就跟著重建。</p></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>03 參數化構件工具<em>14 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">03 — 參數化構件工具</div><h1 class="abs" style="left:96px;top:118px">參數化構件工具<small>拉桿工具 TieRod_Assembly</small></h1><img loading="lazy" decoding="async" class="abs" src="img/fpj_node.jpg" style="left:96px;top:196px;width:1040px;height:562px"><div class="cap" style="left:96px;top:766px;width:1040px"><b>Blender 節點圖</b>（整理後）：七個框對應右側流程的七個步驟</div><img loading="lazy" decoding="async" class="abs" src="img/fpj_rods.jpg" style="left:96px;top:810px;width:281px;height:168px"><div class="cap" style="left:96px;top:986px;width:281px"><b>連桿結構</b>（Blender 視窗）</div><img loading="lazy" decoding="async" class="abs" src="img/fpj_rod_before_clay.jpg" style="left:397px;top:810px;width:359px;height:168px"><div class="cap" style="left:397px;top:986px;width:359px"><b>拖動前</b>（白膜）</div><img loading="lazy" decoding="async" class="abs" src="img/fpj_rod_after_clay.jpg" style="left:777px;top:810px;width:359px;height:168px"><div class="cap" style="left:777px;top:986px;width:359px"><b>拖動終點後</b>：桿身轉向、伸長；橘點是原本的終點</div><div class="abs" style="left:1184px;top:196px;font-size:15px;font-weight:800;letter-spacing:.1em;color:var(--mute)">節點流程（簡化）</div><div class="abs" style="left:1184px;top:228px;width:640px;height:62px;border:2px solid #a45c66;border-radius:6px;display:flex;align-items:center"><div style="background:#a45c66;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">① 讀取輸入</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">起點、終點物件；叉頭、桿身、耳片模型；自轉角等參數</div></div><div class="abs" style="left:1268px;top:290px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:304px;width:640px;height:62px;border:2px solid #4f7a9a;border-radius:6px;display:flex;align-items:center"><div style="background:#4f7a9a;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">② 方向・距離・中點</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">方向＝終點−起點；中點＝兩端平均</div></div><div class="abs" style="left:1268px;top:366px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:380px;width:640px;height:62px;border:2px solid #a08a4a;border-radius:6px;display:flex;align-items:center"><div style="background:#a08a4a;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">③ 桿身伸縮比例</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">（距離 − 2×內縮）÷ 原始長度，只拉長 X 軸</div></div><div class="abs" style="left:1268px;top:442px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:456px;width:640px;height:62px;border:2px solid #5a8a5e;border-radius:6px;display:flex;align-items:center"><div style="background:#5a8a5e;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">④ 兩端朝向</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">零件 X 軸對齊另一端，B 端反向，可加自轉</div></div><div class="abs" style="left:1268px;top:518px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:532px;width:640px;height:62px;border:2px solid #7a6699;border-radius:6px;display:flex;align-items:center"><div style="background:#7a6699;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">⑤ 擺放</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">叉頭放到兩端，桿身放到中點並伸縮</div></div><div class="abs" style="left:1268px;top:594px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:608px;width:640px;height:62px;border:2px solid #6a6a6a;border-radius:6px;display:flex;align-items:center"><div style="background:#6a6a6a;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">⑥ 耳片（可開關）</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">轉向、自轉後放到端點，A／B 端各自開關</div></div><div class="abs" style="left:1268px;top:670px;width:0;height:14px;border-left:2px solid #9aa3ab"></div><div class="abs" style="left:1184px;top:684px;width:640px;height:62px;border:2px solid #4a4a4a;border-radius:6px;display:flex;align-items:center"><div style="background:#4a4a4a;color:#fff;height:100%;width:178px;display:flex;align-items:center;padding-left:12px;font-size:17px;font-weight:800">⑦ 合併輸出</div><div style="padding:0 14px;font-size:14px;color:var(--ink2);line-height:1.4">合成單一幾何</div></div><div class="abs txt" style="left:1184px;top:772px;width:640px"><p>拖動兩個端點，整組拉桿自動重建；參數面板（Start、End、Roll、Inset、Lug）就是工具的介面。</p><p>同一套工具後來也用在 Lily AI 的玻璃屋場景，拉桿組件用了 <b>103 次</b>。</p></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>03 參數化構件工具<em>15 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 04 / 08</div><div class="nm">XR Showcase 活動宣傳主視覺</div><div class="ds">2025、2026 兩屆活動宣傳主視覺</div><div class="rule"></div><div class="inf"><p><span class="badge">個人作品</span></p><p><span class="k">工具</span>Blender・Gaea・Marvelous Designer・SpeedTree</p><p><span class="k">時間</span>2025–26</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class="on"><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>04 XR Showcase<em>16 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">04 — XR Showcase 活動宣傳主視覺</div><h1 class="abs" style="left:96px;top:118px">XR Showcase 活動宣傳主視覺<small>2025</small></h1><img loading="lazy" decoding="async" class="abs" src="img/xr1_orange.jpg" style="left:96px;top:190px;width:579px;height:820px"><div class="cap" style="left:96px;top:1018px;width:579px"><b>定稿</b>｜橘</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_blue.jpg" style="left:707px;top:190px;width:579px;height:820px"><div class="cap" style="left:707px;top:1018px;width:579px">藍色版本</div><div class="abs txt" style="left:1342.1920903954804px;top:192px;width:481.80790960451964px"><div class="tags" style="margin-bottom:12px"><span>Gaea</span><span>Blender</span><span>Marvelous Designer</span><span>SpeedTree</span><span>手繪貼圖</span></div><p>一塊塊地形拼片散落在紅色平面上，角色躺在花海裡。地形用 Gaea 節點生成後匯入 Blender，植物用手繪的 color／mask 貼圖做成卡片，角色服裝用 Marvelous Designer 模擬。</p><p class="meta">明信片：同一組場景重新構圖</p></div><img loading="lazy" decoding="async" class="abs" src="img/xr1_pc_back.jpg" style="left:1342px;top:370px;width:248px;height:323px"><img loading="lazy" decoding="async" class="abs" src="img/xr1_pc_front.jpg" style="left:1590px;top:370px;width:234px;height:323px"><div class="cap" style="left:1342.1920903954804px;top:701px;width:481.80790960451964px">左：背面（橘）｜右：正面（藍），兩面拼成一張連續畫面</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>04 XR Showcase<em>17 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">04 — XR Showcase 活動宣傳主視覺</div><h1 class="abs" style="left:96px;top:118px">XR Showcase 活動宣傳主視覺<small>2025・製作過程</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">Blender・Gaea・Marvelous Designer</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_bl_cam.jpg" style="left:96px;top:190px;width:639px;height:343px"><div class="cap" style="left:96px;top:541px;width:639px"><b>Blender 相機視角</b>：海報構圖直接在相機框內排</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_bl_scene.jpg" style="left:759px;top:190px;width:637px;height:343px"><div class="cap" style="left:759px;top:541px;width:637px"><b>場景配置</b>：地形拼片與角色的擺放（左：算繪，右：實體）</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_gaea.jpg" style="left:96px;top:593px;width:592px;height:318px"><div class="cap" style="left:96px;top:919px;width:592px"><b>Gaea 地形節點</b>：火山、峽谷、河流、侵蝕組合成地形，再上色輸出</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_md_pattern.jpg" style="left:712px;top:593px;width:624px;height:318px"><div class="cap" style="left:712px;top:919px;width:624px"><b>Marvelous Designer 打版</b>：外套與長裙</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_md_lay.jpg" style="left:1360px;top:593px;width:464px;height:318px"><div class="cap" style="left:1360px;top:919px;width:464px"><b>躺姿布料模擬</b></div><div class="abs cap" style="left:1440px;top:190px"><b>手繪植物貼圖</b>（color／mask），做成卡片插在地形上</div><img loading="lazy" decoding="async" class="abs" src="img/xr1_t_fern_color.jpg" style="left:1440px;top:222px;width:150px;height:150px"><img loading="lazy" decoding="async" class="abs" src="img/xr1_t_fern_mask.jpg" style="left:1602px;top:222px;width:150px;height:150px"><img loading="lazy" decoding="async" class="abs" src="img/xr1_t_Nemophila_petal.jpg" style="left:1440px;top:384px;width:150px;height:150px"><img loading="lazy" decoding="async" class="abs" src="img/xr1_t_Nemophila_petal_mask.jpg" style="left:1602px;top:384px;width:150px;height:150px"><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>04 XR Showcase<em>18 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">04 — XR Showcase 活動宣傳主視覺</div><h1 class="abs" style="left:96px;top:118px">XR Showcase 活動宣傳主視覺<small>2026</small></h1><img loading="lazy" decoding="async" class="abs" src="img/xr2_final_a.jpg" style="left:96px;top:190px;width:579px;height:820px"><div class="cap" style="left:96px;top:1018px;width:579px"><b>選定 A</b></div><img loading="lazy" decoding="async" class="abs" src="img/xr2_final_b.jpg" style="left:707px;top:190px;width:579px;height:820px"><div class="cap" style="left:707px;top:1018px;width:579px"><b>選定 B</b></div><div class="abs txt" style="left:1342.3564225562309px;top:192px;width:481.6435774437691px"><p>從配色、字體、框線到相機角度，一共試了 28 種方向，最後收斂成兩張：低飽和的藍色夜景與洋紅色版本（下一頁是嘗試過程）。</p><p class="meta">明信片正反面</p></div><img loading="lazy" decoding="async" class="abs" src="img/xr2_card_f.jpg" style="left:1342px;top:330px;width:233px;height:324px"><div class="cap" style="left:1342px;top:662px;width:233px">正面</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_card_b.jpg" style="left:1591px;top:330px;width:233px;height:324px"><div class="cap" style="left:1591px;top:662px;width:233px">背面</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>04 XR Showcase<em>19 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">04 — XR Showcase 活動宣傳主視覺</div><h1 class="abs" style="left:96px;top:118px">XR Showcase 活動宣傳主視覺<small>2026・風格嘗試</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">共試了 28 種方向，這裡列出 21 種</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try00.jpg" style="left:96px;top:196px;width:170px;height:241px"><div class="abs" style="left:96px;top:443px;font-size:12.5px;color:var(--mute)">01</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try01.jpg" style="left:278px;top:196px;width:170px;height:241px"><div class="abs" style="left:278px;top:443px;font-size:12.5px;color:var(--mute)">02</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try03.jpg" style="left:460px;top:196px;width:170px;height:241px"><div class="abs" style="left:460px;top:443px;font-size:12.5px;color:var(--mute)">03</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try04.jpg" style="left:642px;top:196px;width:169px;height:241px"><div class="abs" style="left:642px;top:443px;font-size:12.5px;color:var(--mute)">04</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try05.jpg" style="left:825px;top:196px;width:169px;height:241px"><div class="abs" style="left:824px;top:443px;font-size:12.5px;color:var(--mute)">05</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try06.jpg" style="left:1006px;top:196px;width:170px;height:241px"><div class="abs" style="left:1006px;top:443px;font-size:12.5px;color:var(--mute)">06</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try07.jpg" style="left:1188px;top:197px;width:170px;height:240px"><div class="abs" style="left:1188px;top:443px;font-size:12.5px;color:var(--mute)">07</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try08.jpg" style="left:96px;top:467px;width:170px;height:241px"><div class="abs" style="left:96px;top:714px;font-size:12.5px;color:var(--mute)">08</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try09.jpg" style="left:278px;top:467px;width:170px;height:241px"><div class="abs" style="left:278px;top:714px;font-size:12.5px;color:var(--mute)">09</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try10.jpg" style="left:460px;top:467px;width:170px;height:241px"><div class="abs" style="left:460px;top:714px;font-size:12.5px;color:var(--mute)">10</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try11.jpg" style="left:642px;top:468px;width:170px;height:241px"><div class="abs" style="left:642px;top:714px;font-size:12.5px;color:var(--mute)">11</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try12.jpg" style="left:824px;top:467px;width:169px;height:241px"><div class="abs" style="left:824px;top:714px;font-size:12.5px;color:var(--mute)">12</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try13.jpg" style="left:1006px;top:468px;width:170px;height:240px"><div class="abs" style="left:1006px;top:714px;font-size:12.5px;color:var(--mute)">13</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try14.jpg" style="left:1188px;top:470px;width:170px;height:238px"><div class="abs" style="left:1188px;top:714px;font-size:12.5px;color:var(--mute)">14</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try15.jpg" style="left:96px;top:739px;width:170px;height:241px"><div class="abs" style="left:96px;top:985px;font-size:12.5px;color:var(--mute)">15</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try17.jpg" style="left:278px;top:738px;width:170px;height:241px"><div class="abs" style="left:278px;top:985px;font-size:12.5px;color:var(--mute)">16</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try19.jpg" style="left:460px;top:738px;width:169px;height:241px"><div class="abs" style="left:460px;top:985px;font-size:12.5px;color:var(--mute)">17</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try22.jpg" style="left:642px;top:739px;width:170px;height:240px"><div class="abs" style="left:642px;top:985px;font-size:12.5px;color:var(--mute)">18</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try23.jpg" style="left:824px;top:738px;width:170px;height:241px"><div class="abs" style="left:824px;top:985px;font-size:12.5px;color:var(--mute)">19</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try24.jpg" style="left:1006px;top:738px;width:170px;height:241px"><div class="abs" style="left:1006px;top:985px;font-size:12.5px;color:var(--mute)">20</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_try26.jpg" style="left:1188px;top:739px;width:170px;height:240px"><div class="abs" style="left:1188px;top:985px;font-size:12.5px;color:var(--mute)">21</div><div class="abs" style="left:1388px;top:196px;height:783px;border-left:1px solid #cfd5da"></div><div class="abs" style="left:1422px;top:192px;font-size:17px;font-weight:800;color:var(--ac)">最後選定</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_final_a.jpg" style="left:1422px;top:232px;width:191px;height:270px;outline:3px solid var(--ac);outline-offset:4px"><div class="abs" style="left:1422px;top:513px;font-size:13px;font-weight:800;color:var(--ac)">選定 A</div><img loading="lazy" decoding="async" class="abs" src="img/xr2_final_b.jpg" style="left:1633px;top:233px;width:191px;height:270px;outline:3px solid var(--ac);outline-offset:4px"><div class="abs" style="left:1633px;top:513px;font-size:13px;font-weight:800;color:var(--ac)">選定 B</div><div class="abs txt" style="left:1422px;top:552.9219858156029px;width:402px"><p>嘗試的方向：配色（洋紅、綠、黃、藍）、字體與字框、相機角度與洗衣機數量，以及背景是否保留文字資訊。</p></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>04 XR Showcase<em>20 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 05 / 08</div><div class="nm">物理動一動</div><div class="ds">Python × Blender 資料驅動的物理教學動畫</div><div class="rule"></div><div class="inf"><p><span class="badge">團隊計畫</span></p><p>教育部教學實踐研究計畫，擔任 3D 動畫暨技術美術助教<br>我負責動畫端（CSV → bpy 腳本 → 渲染）；前段的 Python 模擬與 CSV 由同學負責</p><p><span class="k">工具</span>Python・Blender（bpy）・CSV 資料驅動動畫</p><p><span class="k">時間</span>2025–26</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class="on"><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>05 物理動一動<em>21 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">05 — 物理動一動</div><h1 class="abs" style="left:96px;top:118px">物理動一動<small>Python × Blender 資料驅動動畫</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">教育部教學實踐研究計畫（2025.08–2026.07）<br>擔任 3D 動畫暨技術美術助教・與修課學生協作</div><div class="abs" style="left:104px;top:203px;width:1390px;border-top:2px solid #cfd5da"></div><div class="abs" style="left:96px;top:196px;width:16px;height:16px;border-radius:50%;background:#b9bec4"></div><div class="abs" style="left:96px;top:222px;font-size:17px;font-weight:800;color:var(--mute)">物理方程式</div><div class="abs" style="left:96px;top:248px;font-size:13px;color:var(--mute)">課程主題</div><div class="abs" style="left:442px;top:196px;width:16px;height:16px;border-radius:50%;background:#b9bec4"></div><div class="abs" style="left:442px;top:222px;font-size:17px;font-weight:800;color:var(--mute)">Python 模擬</div><div class="abs" style="left:442px;top:248px;font-size:13px;color:var(--mute)">同學負責</div><div class="abs" style="left:787px;top:196px;width:16px;height:16px;border-radius:50%;background:#b9bec4"></div><div class="abs" style="left:787px;top:222px;font-size:17px;font-weight:800;color:var(--mute)">CSV</div><div class="abs" style="left:787px;top:248px;font-size:13px;color:var(--mute)">時間序列／格點向量場</div><div class="abs" style="left:1133px;top:196px;width:16px;height:16px;border-radius:50%;background:var(--ac)"></div><div class="abs" style="left:1133px;top:222px;font-size:17px;font-weight:800;color:var(--ink)">bpy 腳本</div><div class="abs" style="left:1133px;top:248px;font-size:13px;color:var(--mute)">我：生成物件・關鍵幀・圖表同步</div><div class="abs" style="left:1478px;top:196px;width:16px;height:16px;border-radius:50%;background:var(--ac)"></div><div class="abs" style="left:1478px;top:222px;font-size:17px;font-weight:800;color:var(--ink)">渲染成片</div><div class="abs" style="left:1478px;top:248px;font-size:13px;color:var(--mute)">我：場景・材質・燈光・運鏡</div><img loading="lazy" decoding="async" class="abs" src="img/ph_dip_025.8.jpg" style="left:96px;top:300px;width:587px;height:330px"><div class="abs" style="left:108px;top:592px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:3px 10px;border-radius:3px"><span style="font-family:Consolas,monospace;font-weight:700;margin-right:8px">00:25</span>每個格點一支箭頭</div><div class="abs" style="left:723px;top:296px;font-size:24px;font-weight:800">電偶極場</div><div class="abs" style="left:723px;top:334px;font-size:15px;color:var(--ink2)">上千支箭頭由腳本依 CSV 生成、上色、逐層揭露</div><div class="abs" style="left:723px;top:555px;width:1101px;border-top:1px solid #b9bec4"></div><img loading="lazy" decoding="async" class="abs" src="img/ph_dip_002.3.jpg" style="left:723px;top:392px;width:265px;height:149px"><div class="abs" style="left:723px;top:550px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:723px;top:565px;width:265px"><span class="t">00:02</span>從課本的 2D 場線開始</div><img loading="lazy" decoding="async" class="abs" src="img/ph_dip_011.7.jpg" style="left:1002px;top:392px;width:265px;height:149px"><div class="abs" style="left:1002px;top:550px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1002px;top:565px;width:265px"><span class="t">00:11</span>3D 場線</div><img loading="lazy" decoding="async" class="abs" src="img/ph_dip_030.5.jpg" style="left:1280px;top:392px;width:265px;height:149px"><div class="abs" style="left:1280px;top:550px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1280px;top:565px;width:265px"><span class="t">00:30</span>斷層掃描：z = 0</div><img loading="lazy" decoding="async" class="abs" src="img/ph_dip_053.9.jpg" style="left:1559px;top:392px;width:265px;height:149px"><div class="abs" style="left:1559px;top:550px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1559px;top:565px;width:265px"><span class="t">00:53</span>逐層掃過，看場的變化</div><img loading="lazy" decoding="async" class="abs" src="img/ph_bloch_044.8.jpg" style="left:96px;top:670px;width:587px;height:330px"><div class="abs" style="left:108px;top:962px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:3px 10px;border-radius:3px"><span style="font-family:Consolas,monospace;font-weight:700;margin-right:8px">00:44</span>態向量繞軸進動</div><div class="abs" style="left:723px;top:666px;font-size:24px;font-weight:800">布洛赫球</div><div class="abs" style="left:723px;top:704px;font-size:15px;color:var(--ink2)">量子位元在磁場中的三維軌跡</div><div class="abs" style="left:723px;top:925px;width:1101px;border-top:1px solid #b9bec4"></div><img loading="lazy" decoding="async" class="abs" src="img/ph_bloch_002.6.jpg" style="left:723px;top:762px;width:265px;height:149px"><div class="abs" style="left:723px;top:920px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:723px;top:935px;width:265px"><span class="t">00:02</span>書房場景開場</div><img loading="lazy" decoding="async" class="abs" src="img/ph_bloch_007.9.jpg" style="left:1002px;top:762px;width:265px;height:149px"><div class="abs" style="left:1002px;top:920px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1002px;top:935px;width:265px"><span class="t">00:07</span>布洛赫球出現</div><img loading="lazy" decoding="async" class="abs" src="img/ph_bloch_018.5.jpg" style="left:1280px;top:762px;width:265px;height:149px"><div class="abs" style="left:1280px;top:920px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1280px;top:935px;width:265px"><span class="t">00:18</span>磁場箭頭加入</div><img loading="lazy" decoding="async" class="abs" src="img/ph_bloch_065.9.jpg" style="left:1559px;top:762px;width:265px;height:149px"><div class="abs" style="left:1559px;top:920px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1559px;top:935px;width:265px"><span class="t">01:05</span>軌跡留在球面上</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>05 物理動一動<em>22 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">05 — 物理動一動</div><h1 class="abs" style="left:96px;top:118px">物理動一動<small>四個主題，一條管線</small></h1><img loading="lazy" decoding="async" class="abs" src="img/ph_sho_010.6.jpg" style="left:96px;top:200px;width:587px;height:330px"><div class="abs" style="left:108px;top:492px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:3px 10px;border-radius:3px"><span style="font-family:Consolas,monospace;font-weight:700;margin-right:8px">00:10</span>受迫下振幅變化</div><div class="abs" style="left:723px;top:196px;font-size:24px;font-weight:800">受迫阻尼振盪</div><div class="abs" style="left:723px;top:234px;font-size:15px;color:var(--ink2)">方塊位置與 x-t 曲線頂端同步</div><div class="abs" style="left:723px;top:455px;width:1101px;border-top:1px solid #b9bec4"></div><img loading="lazy" decoding="async" class="abs" src="img/ph_sho_000.6.jpg" style="left:723px;top:292px;width:265px;height:149px"><div class="abs" style="left:723px;top:450px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:723px;top:465px;width:265px"><span class="t">00:00</span>彈簧壓縮</div><img loading="lazy" decoding="async" class="abs" src="img/ph_sho_003.1.jpg" style="left:1002px;top:292px;width:265px;height:149px"><div class="abs" style="left:1002px;top:450px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1002px;top:465px;width:265px"><span class="t">00:03</span>開始振盪</div><img loading="lazy" decoding="async" class="abs" src="img/ph_sho_006.9.jpg" style="left:1280px;top:292px;width:265px;height:149px"><div class="abs" style="left:1280px;top:450px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1280px;top:465px;width:265px"><span class="t">00:06</span>x-t 曲線同步長出</div><img loading="lazy" decoding="async" class="abs" src="img/ph_sho_019.4.jpg" style="left:1559px;top:292px;width:265px;height:149px"><div class="abs" style="left:1559px;top:450px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1559px;top:465px;width:265px"><span class="t">00:19</span>完整曲線</div><img loading="lazy" decoding="async" class="abs" src="img/ph_fall_019.7.jpg" style="left:96px;top:570px;width:587px;height:330px"><div class="abs" style="left:108px;top:862px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:3px 10px;border-radius:3px"><span style="font-family:Consolas,monospace;font-weight:700;margin-right:8px">00:19</span>有阻力的趨近終端速度</div><div class="abs" style="left:723px;top:566px;font-size:24px;font-weight:800">自由落體</div><div class="abs" style="left:723px;top:604px;font-size:15px;color:var(--ink2)">比較不同空氣阻力下的下落</div><div class="abs" style="left:723px;top:825px;width:1101px;border-top:1px solid #b9bec4"></div><img loading="lazy" decoding="async" class="abs" src="img/ph_fall_000.9.jpg" style="left:723px;top:662px;width:265px;height:149px"><div class="abs" style="left:723px;top:820px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:723px;top:835px;width:265px"><span class="t">00:00</span>標題：不同阻力係數</div><img loading="lazy" decoding="async" class="abs" src="img/ph_fall_006.6.jpg" style="left:1002px;top:662px;width:265px;height:149px"><div class="abs" style="left:1002px;top:820px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1002px;top:835px;width:265px"><span class="t">00:06</span>兩物體同時落下</div><img loading="lazy" decoding="async" class="abs" src="img/ph_fall_012.2.jpg" style="left:1280px;top:662px;width:265px;height:149px"><div class="abs" style="left:1280px;top:820px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1280px;top:835px;width:265px"><span class="t">00:12</span>v-t 圖同步畫出</div><img loading="lazy" decoding="async" class="abs" src="img/ph_fall_029.1.jpg" style="left:1559px;top:662px;width:265px;height:149px"><div class="abs" style="left:1559px;top:820px;width:9px;height:9px;border-radius:50%;background:var(--ac)"></div><div class="cap" style="left:1559px;top:835px;width:265px"><span class="t">00:29</span>兩條曲線分開</div><div class="abs" style="left:96px;top:930px;width:1728px;border-top:1px solid var(--line)"></div><div class="abs txt" style="left:96px;top:946px;width:820px"><p>我負責動畫端（bpy 腳本 → 渲染），前段的 Python 模擬與 CSV 由同學負責。<b>將動畫內容參數化，並且透過資料驅動動畫關鍵幀生成</b>；換一份資料重跑就是一支新動畫。</p></div><div class="abs txt" style="left:976px;top:946px;width:848px"><p>每個主題都寫了交接文件（CSV 格式、要改哪幾行、怎麼重跑），沒有 Blender 經驗的人也能接手。第 12 週向 55 人的課堂示範資料匯入與渲染。</p></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>05 物理動一動<em>23 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 06 / 08</div><div class="nm">頒獎典禮舞台背景</div><div class="ds">Unreal Engine 場景動畫，播放於舞台電視牆</div><div class="rule"></div><div class="inf"><p><span class="badge">雙人合作</span></p><p>劇本與段落安排由劇情組負責；我依分配到的段落與需求製作背景動畫，其他段落的背景由別組製作<br>這六段由我和另一位同學合作，場景建構主要由我負責，同學提供部分構圖建議</p><p><span class="k">工具</span>Unreal Engine 5・Megascans・SpeedTree</p><p><span class="k">時間</span>2025</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class="on"><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>06 頒獎典禮舞台背景<em>24 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">06 — 頒獎典禮舞台背景</div><h1 class="abs" style="left:96px;top:118px">頒獎典禮舞台背景<small>Unreal Engine 場景動畫</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">陽明交大傑出校友頒獎典禮<br>依劇情與受獎人意象設計，播放於舞台後方電視牆</div><img loading="lazy" decoding="async" class="abs" src="img/al_c1.jpg" style="left:96px;top:196px;width:560px;height:151px"><div class="cap" style="left:96px;top:355px;width:560px"><b>場景 1</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_c2.jpg" style="left:680px;top:196px;width:560px;height:151px"><div class="cap" style="left:680px;top:355px;width:560px"><b>場景 2</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_c3.jpg" style="left:1264px;top:196px;width:560px;height:151px"><div class="cap" style="left:1264px;top:355px;width:560px"><b>場景 3</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_c4.jpg" style="left:96px;top:391px;width:560px;height:151px"><div class="cap" style="left:96px;top:551px;width:560px"><b>場景 4</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_c5.jpg" style="left:680px;top:391px;width:560px;height:151px"><div class="cap" style="left:680px;top:551px;width:560px"><b>場景 5</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_c6.jpg" style="left:1264px;top:391px;width:560px;height:151px"><div class="cap" style="left:1264px;top:551px;width:560px"><b>場景 6</b></div><img loading="lazy" decoding="async" class="abs" src="img/al_photo.jpg" style="left:96px;top:613px;width:706px;height:397px"><div class="cap" style="left:96px;top:1018px;width:706px"><b>排練現場</b>：第 5 幕在舞台後方電視牆播放</div><div class="abs txt" style="left:850.3063063063063px;top:612.7027027027027px;width:973.6936936936937px"><div class="tags" style="margin-bottom:10px"><span>UE5</span><span>Megascans</span><span>SpeedTree</span><span>燈光</span><span>後製</span></div><div class="note" style="margin-bottom:14px;font-size:15px"><b>分工</b>　劇本與段落安排由劇情組負責，我依分配到的段落與需求製作背景動畫；不是每一段都由我製作，其他段落的背景由別組負責。<br>這六段由我和另一位同學合作，<b>場景建構主要由我負責</b>，同學提供部分構圖建議。</div><p>在 Unreal Engine 搭出場景並渲染成約 3.7 : 1 的超寬動畫，在電視牆上依舞台劇情切換。模型一部分來自 Megascans，一部分自己建模，植物用 SpeedTree 建模。</p><p class="meta">輸出解析度 7992 × 2160（約 3.7 : 1）・共六段場景</p></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>06 頒獎典禮舞台背景<em>25 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 07 / 08</div><div class="nm">鴿子音樂盒</div><div class="ds">LLM × 音樂 × 裸眼 3D 的互動裝置</div><div class="rule"></div><div class="inf"><p><span class="badge">三人合作</span></p><p>我負責整體設計、UE 全部程式、動畫、大部分建模、燈光、Kinect 串接與佈展<br>音樂由一位同學提供，部分 3D 模型由另一位同學提供</p><p><span class="k">工具</span>Unreal Engine・nDisplay・Kinect・LLM・Blender・Rhino</p><p><span class="k">時間</span>2025</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class="on"><span>07</span>鴿子音樂盒</div><div class=""><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>07 鴿子音樂盒<em>26 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">07 — 鴿子音樂盒</div><h1 class="abs" style="left:96px;top:118px">鴿子音樂盒<small>互動裝置</small></h1><img loading="lazy" decoding="async" class="abs" src="img/pg_render.jpg" style="left:96px;top:190px;width:461px;height:820px"><div class="cap" style="left:96px;top:1018px;width:461px"><b>機械音樂盒</b>（UE）</div><img loading="lazy" decoding="async" class="abs" src="img/pg_install.jpg" style="left:589px;top:190px;width:547px;height:820px"><div class="cap" style="left:589px;top:1018px;width:547px"><b>展場</b>：五面螢幕以 nDisplay 拼成一個畫面</div><div class="abs txt" style="left:1191.6888888888889px;top:192px;width:632.3111111111111px"><p class="meta" style="margin-bottom:10px">XR Showcase／系上師生展・三人合作<br>我負責整體設計、UE 全部程式、動畫、大部分建模、燈光、Kinect 串接與佈展</p><p>觀眾輸入一段話，LLM 回傳結構化選擇，三層轉盤各轉到一面（3×3×3 種組合），三軌音樂同時組合播放。Kinect 追蹤觀眾眼睛，虛擬相機跟著移動，形成<b>裸眼 3D</b> 的透視。</p></div><img loading="lazy" decoding="async" class="abs" src="img/pg_organ.jpg" style="left:1192px;top:400px;width:299px;height:267px"><div class="cap" style="left:1192px;top:675px;width:299px"><b>MIDI 驅動琴槌</b></div><img loading="lazy" decoding="async" class="abs" src="img/pg_rig.jpg" style="left:1507px;top:400px;width:317px;height:267px"><div class="cap" style="left:1507px;top:675px;width:317px">琴槌骨架</div><img loading="lazy" decoding="async" class="abs" src="img/pg_detail.jpg" style="left:1192px;top:713px;width:249px;height:238px"><div class="cap" style="left:1192px;top:959px;width:249px">齒輪與鋼管</div><img loading="lazy" decoding="async" class="abs" src="img/pg_kinect.jpg" style="left:1457px;top:713px;width:367px;height:238px"><div class="cap" style="left:1457px;top:959px;width:367px">Kinect 深度與紅外線</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>07 鴿子音樂盒<em>27 / 31</em></span></div></section>
+<section class="page dv"><div class="ctr"><div class="pn">PROJECT 08 / 08</div><div class="nm">其他小型嘗試</div><div class="ds">布料模擬・Shader・法線烘焙・UE 瀑布・Grasshopper</div><div class="rule"></div><div class="inf"><p><span class="badge">小型練習</span></p><p>課程作業與自學練習</p><p><span class="k">工具</span>Marvelous Designer・TouchDesigner（GLSL）・Blender・SpeedTree・Unreal Engine・Rhino × Grasshopper</p><p><span class="k">時間</span>2022–26</p></div></div><div class="ix" style="grid-template-columns:repeat(8,1fr)"><div class=""><span>01</span>台式理髮廳</div><div class=""><span>02</span>Lily AI</div><div class=""><span>03</span>參數化構件工具</div><div class=""><span>04</span>XR Showcase 活動宣傳主視覺</div><div class=""><span>05</span>物理動一動</div><div class=""><span>06</span>頒獎典禮舞台背景</div><div class=""><span>07</span>鴿子音樂盒</div><div class="on"><span>08</span>其他小型嘗試</div></div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>08 其他小型嘗試<em>28 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">08 — 其他小型嘗試</div><h1 class="abs" style="left:96px;top:118px">其他小型嘗試<small>Marvelous Designer 布料模擬</small></h1><div class="abs meta" style="left:996px;top:120px;width:828px;text-align:right">自己打版、調整與模擬服裝</div><img loading="lazy" decoding="async" class="abs" src="img/sm_md_maid_g.jpg" style="left:295px;top:190px;width:262px;height:460px"><img loading="lazy" decoding="async" class="abs" src="img/sm_md_maid_g2.jpg" style="left:571px;top:190px;width:262px;height:460px"><svg class="abs" style="left:832px;top:380px" width="92" height="80"><defs><marker id="ar8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d2329"/></marker></defs><line x1="12" y1="40" x2="82" y2="40" stroke="#1d2329" stroke-width="2" marker-end="url(#ar8)"/></svg><div class="abs cap" style="left:832px;top:430px;width:92px;text-align:center">參考灰模<br>繪製</div><img loading="lazy" decoding="async" class="abs" src="img/sm_md_maid_c.jpg" style="left:924px;top:190px;width:244px;height:460px"><div class="abs" style="left:1189px;top:190px;height:460px;border-left:1px solid #cfd5da"></div><img loading="lazy" decoding="async" class="abs" src="img/sm_md_braid.jpg" style="left:1209px;top:190px;width:408px;height:223px"><img loading="lazy" decoding="async" class="abs" src="img/sm_md_dress.jpg" style="left:1209px;top:427px;width:417px;height:223px"><div class="cap" style="left:295px;top:660px;width:874px"><b>女僕裝</b>（2025–26）：在 MD 打版、模擬出灰模（左二），再參考灰模畫成插畫（右）</div><div class="cap" style="left:1209px;top:660px;width:417px"><b>同一套服裝在 MD 裡的畫面</b>：版片與模擬</div><img loading="lazy" decoding="async" class="abs" src="img/sm_md_apron.jpg" style="left:532px;top:714px;width:247px;height:256px"><img loading="lazy" decoding="async" class="abs" src="img/sm_md_sit.jpg" style="left:793px;top:714px;width:258px;height:256px"><img loading="lazy" decoding="async" class="abs" src="img/sm_md_hood1.jpg" style="left:1065px;top:714px;width:138px;height:256px"><img loading="lazy" decoding="async" class="abs" src="img/sm_md_hood2.jpg" style="left:1217px;top:714px;width:171px;height:256px"><div class="cap" style="left:532px;top:978px;width:857px"><b>其他服裝</b>：圍裙洋裝（2024）、坐姿長裙的垂墜（2025）、連帽外套與長裙，抱著東西的姿勢（2025）</div><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>08 其他小型嘗試<em>29 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:96px">08 — 其他小型嘗試</div><h1 class="abs" style="left:96px;top:118px">其他小型嘗試<small>Shader・烘焙・Unreal・Grasshopper</small></h1><div class="abs" style="left:96px;top:186px;width:832.0px;border-top:2px solid var(--ink);padding-top:8px"><b style="font-size:18px">TouchDesigner｜GLSL Shader<span style="font-weight:500;color:var(--mute);margin-left:10px">2022</span></b><div class="meta" style="margin-top:2px">GLSL 與節點結合寫成的 shader，渲染雨傘與泡泡；右為使用的筆觸貼圖</div></div><img loading="lazy" decoding="async" class="abs" src="img/sm_td_umb.jpg" style="left:96px;top:258px;width:453px;height:340px"><img loading="lazy" decoding="async" class="abs" src="img/sm_td_tex.jpg" style="left:563px;top:258px;width:340px;height:340px"><div class="abs" style="left:992.0px;top:186px;width:832.0px;border-top:2px solid var(--ink);padding-top:8px"><b style="font-size:18px">Blender × SpeedTree｜法線貼圖烘焙<span style="font-weight:500;color:var(--mute);margin-left:10px">2025</span></b><div class="meta" style="margin-top:2px">低面數海綿模型（左）烘焙法線貼圖（中），再用 SpeedTree 生成成群的海綿（右）</div></div><img loading="lazy" decoding="async" class="abs" src="img/sm_bake_low.jpg" style="left:992px;top:258px;width:204px;height:289px"><img loading="lazy" decoding="async" class="abs" src="img/sm_bake_rock.jpg" style="left:1210px;top:258px;width:234px;height:289px"><img loading="lazy" decoding="async" class="abs" src="img/sm_bake_st.jpg" style="left:1458px;top:258px;width:366px;height:289px"><div class="abs" style="left:96px;top:650px;width:832.0px;border-top:2px solid var(--ink);padding-top:8px"><b style="font-size:18px">Unreal Engine｜瀑布<span style="font-weight:500;color:var(--mute);margin-left:10px">2026</span></b><div class="meta" style="margin-top:2px">瀑布場景與它的材質節點圖（WaterFallBase）</div></div><img loading="lazy" decoding="async" class="abs" src="img/sm_wf_scene.jpg" style="left:96px;top:722px;width:387px;height:229px"><img loading="lazy" decoding="async" class="abs" src="img/sm_wf_graph.jpg" style="left:497px;top:722px;width:431px;height:229px"><div class="abs" style="left:992.0px;top:650px;width:832.0px;border-top:2px solid var(--ink);padding-top:8px"><b style="font-size:18px">Rhino × Grasshopper｜鏤空燈箱<span style="font-weight:500;color:var(--mute);margin-left:10px">2023</span></b><div class="meta" style="margin-top:2px">Grasshopper 在三角網格上生成大小漸變的孔洞，做成燈箱外殼</div></div><img loading="lazy" decoding="async" class="abs" src="img/sm_gh_render.jpg" style="left:992px;top:722px;width:423px;height:238px"><img loading="lazy" decoding="async" class="abs" src="img/sm_gh_node.jpg" style="left:1429px;top:722px;width:395px;height:238px"><div class="tb"><span>洪敏祐<em>作品集 2026</em></span><span>08 其他小型嘗試<em>30 / 31</em></span></div></section>
+<section class="page"><div class="abs lbl" style="left:96px;top:400px">THANK YOU</div><div class="abs" style="left:96px;top:430px;font-size:64px;font-weight:800">謝謝您的閱讀</div><div class="abs lead" style="left:96px;top:540px;width:1100px">洪敏祐｜Email：[請填寫]｜電話：[請填寫]｜作品影片：[請填寫連結]</div></section>
+</div><script>
+(function(){function fit(){var w=document.documentElement.clientWidth;var z=Math.min(1,(w-16)/1920);document.getElementById('pf').style.zoom=z;}
+window.addEventListener('resize',fit);fit();})();
+</script></body></html>
